@@ -126,7 +126,7 @@ export default function Dashboard() {
           <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold">Clue</span>
+          <span className="text-xl font-bold">creAnva</span>
         </Link>
 
         <Button variant="hero" className="w-full mb-6" asChild>
