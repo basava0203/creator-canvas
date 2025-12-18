@@ -38,6 +38,7 @@ const pricingTiers = [
   {
     name: "Starter",
     price: "Free",
+    priceINR: "",
     description: "Perfect for trying out creAnva",
     features: ["3 videos/month", "5 min max length", "Basic AI voices", "Watermarked exports"],
     cta: "Get Started",
@@ -46,6 +47,7 @@ const pricingTiers = [
   {
     name: "Pro",
     price: "$29",
+    priceINR: "₹4,500",
     period: "/month",
     description: "For power users and small teams",
     features: ["Unlimited videos", "30 min max length", "Premium AI voices", "No watermarks", "Priority processing", "Team collaboration"],
@@ -55,6 +57,7 @@ const pricingTiers = [
   {
     name: "Enterprise",
     price: "Custom",
+    priceINR: "",
     description: "For large organizations",
     features: ["Everything in Pro", "Custom AI training", "SSO & SAML", "Dedicated support", "SLA guarantee", "Custom integrations"],
     cta: "Contact Sales",
@@ -220,10 +223,13 @@ export default function LandingPage() {
                   </div>
                 )}
                 <h3 className="text-xl font-semibold mb-2">{tier.name}</h3>
-                <div className="flex items-baseline gap-1 mb-2">
+                <div className="flex items-baseline gap-1 mb-1">
                   <span className="text-4xl font-bold">{tier.price}</span>
                   {tier.period && <span className="text-muted-foreground">{tier.period}</span>}
                 </div>
+                {tier.priceINR && (
+                  <p className="text-sm text-muted-foreground mb-2">{tier.priceINR}/month</p>
+                )}
                 <p className="text-muted-foreground text-sm mb-6">{tier.description}</p>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature) => (
