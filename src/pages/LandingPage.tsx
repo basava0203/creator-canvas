@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Play, Sparkles, FileText, Zap, ArrowRight, Check, Video, BookOpen, Share2 } from "lucide-react";
 import heroImage from "@/assets/hero-image.png";
+import AIChatbot from "@/components/AIChatbot";
 
 const features = [
   {
@@ -37,7 +38,7 @@ const pricingTiers = [
   {
     name: "Starter",
     price: "Free",
-    description: "Perfect for trying out Clue",
+    description: "Perfect for trying out creAnva",
     features: ["3 videos/month", "5 min max length", "Basic AI voices", "Watermarked exports"],
     cta: "Get Started",
     popular: false,
@@ -71,7 +72,7 @@ export default function LandingPage() {
             <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
               <Sparkles className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold">Clue</span>
+            <span className="text-xl font-bold">creAnva</span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
@@ -131,7 +132,7 @@ export default function LandingPage() {
             <div className="relative glass rounded-2xl p-2 shadow-card">
               <img 
                 src={heroImage} 
-                alt="Clue AI-powered video editing interface showing screen recording transformation" 
+                alt="creAnva AI-powered video editing interface showing screen recording transformation" 
                 className="w-full rounded-xl"
               />
             </div>
@@ -145,7 +146,7 @@ export default function LandingPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Everything You Need</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From recording to sharing, Clue handles the entire content creation workflow.
+              From recording to sharing, creAnva handles the entire content creation workflow.
             </p>
           </div>
 
@@ -274,10 +275,10 @@ export default function LandingPage() {
               <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold">Clue</span>
+              <span className="text-xl font-bold">creAnva</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              © 2024 Clue. All rights reserved.
+              © 2024 creAnva. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy</a>
@@ -287,6 +288,9 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* AI Chatbot */}
+      <AIChatbot />
     </div>
   );
 }
