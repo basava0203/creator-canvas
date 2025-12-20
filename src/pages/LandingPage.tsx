@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Play, Sparkles, FileText, Zap, ArrowRight, Check, Video, BookOpen, Share2 } from "lucide-react";
 import heroImage from "@/assets/hero-image.png";
 import AIChatbot from "@/components/AIChatbot";
-
+import FeatureShowcaseDialog from "@/components/FeatureShowcaseDialog";
 const features = [
   {
     icon: Video,
@@ -111,12 +111,12 @@ export default function LandingPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <Button variant="hero" size="xl" asChild>
-              <Link to="/dashboard">
+            <FeatureShowcaseDialog>
+              <Button variant="hero" size="xl">
                 Start Creating for Free
                 <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
+              </Button>
+            </FeatureShowcaseDialog>
             <Button variant="glass" size="xl">
               <Play className="w-5 h-5" />
               Watch Demo
@@ -239,13 +239,20 @@ export default function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  variant={tier.popular ? "hero" : "outline"}
-                  className="w-full"
-                  asChild
-                >
-                  <Link to="/dashboard">{tier.cta}</Link>
-                </Button>
+                {tier.name === "Enterprise" ? (
+                  <Button variant="outline" className="w-full">
+                    {tier.cta}
+                  </Button>
+                ) : (
+                  <FeatureShowcaseDialog>
+                    <Button
+                      variant={tier.popular ? "hero" : "outline"}
+                      className="w-full"
+                    >
+                      {tier.cta}
+                    </Button>
+                  </FeatureShowcaseDialog>
+                )}
               </div>
             ))}
           </div>
@@ -262,12 +269,12 @@ export default function LandingPage() {
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Join thousands of teams creating professional videos and guides in minutes, not hours.
               </p>
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/dashboard">
+              <FeatureShowcaseDialog>
+                <Button variant="hero" size="xl">
                   Start Creating Now
                   <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
+                </Button>
+              </FeatureShowcaseDialog>
             </div>
           </div>
         </div>
