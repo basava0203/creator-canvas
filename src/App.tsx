@@ -10,6 +10,7 @@ import RecordingPage from "./pages/RecordingPage";
 import EditorPage from "./pages/EditorPage";
 import ProcessingPage from "./pages/ProcessingPage";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -22,10 +23,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/auth" element={<AuthPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/record" element={<RecordingPage />} />
-          <Route path="/editor/:id" element={<EditorPage />} />
-          <Route path="/processing" element={<ProcessingPage />} />
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/record" element={<ProtectedRoute><RecordingPage /></ProtectedRoute>} />
+          <Route path="/editor/:id" element={<ProtectedRoute><EditorPage /></ProtectedRoute>} />
+          <Route path="/processing" element={<ProtectedRoute><ProcessingPage /></ProtectedRoute>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
